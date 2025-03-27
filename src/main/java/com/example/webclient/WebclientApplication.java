@@ -23,7 +23,7 @@ public class WebclientApplication implements CommandLineRunner {
                 .retrieve()
                 .bodyToMono(CatFactDTO.class);
 
-        CatFactDTO catFactResponse = catFactMono.block();
+        CatFactDTO catFactResponse = catFactMono.block(); //In a real life application - we should not block the thread. This is only to print
         System.out.println("Response: " + catFactResponse);
     }
 }
